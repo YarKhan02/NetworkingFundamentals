@@ -1,0 +1,24 @@
+#!/usr/bin/env bash
+
+STACK_NAME="NetworkVPC"
+TEMPLATE_FILE="template.yaml"
+REGION="ap-southeast-2"
+
+VPC_CIDR="10.100.123.0/24"
+PUBLIC_SUBNET_CIDR="10.100.123.0/28"
+PRIVATE_SUBNET_CIDR="10.100.123.128/28"
+AVAILABILITY_ZONE="ap-southeast-2a"
+
+aws cloudformation deploy \
+  --stack-name "$STACK_NAME" \
+  --template-file "$TEMPLATE_FILE" \
+  --region "$REGION" \
+  --capabilities CAPABILITY_NAMED_IAM \
+  --parameter-overrides \
+    VpcCidr="$VPC_CIDR" \
+    PublicSubnetCidr="$PUBLIC_SUBNET_CIDR" \
+    PrivateSubnetCidr="$PRIVATE_SUBNET_CIDR" \
+    AvailabilityZone="$AVAILABILITY_ZONE"
+
+
+echo "Deployment initiated for stack: $STACK_NAME"
