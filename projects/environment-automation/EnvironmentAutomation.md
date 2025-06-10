@@ -2,11 +2,11 @@
 
 These are the VPC Settings for our cloud enviroment in AWS:
 
-- VPC IPV4 CIDR Block: 10.200.123.0/24
+- VPC IPV4 CIDR Block: 10.100.123.0/24
 - Ipv6 CIDR Block: No
 - Number of AZs: 1
-- Number of public subnets: 1 (10.200.123.0/28)
-- Number of private subnets: 1 (10.200.123.128/28)
+- Number of public subnets: 1 (10.100.123.0/28)
+- Number of private subnets: 1 (10.100.123.128/28)
 - NAT GATEWAYS: None
 - VPC Endpoints: None
 - DNS Options: Enable DNS Hostnames
